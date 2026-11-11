@@ -1,0 +1,37 @@
+{
+  "name": "anderson-law-firm-homepage",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Homepage redesign demo for Anderson Law Firm (srandersonlawfirm.com)",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs",
+    "preview": "vite preview --port 4173 --strictPort",
+    "typecheck": "tsc --noEmit",
+    "images": "node scripts/optimize-images.mjs",
+    "test:render": "node tests/render.cjs",
+    "test:interactions": "node tests/interactions.cjs",
+    "test:content": "node tests/content-parity.cjs",
+    "test": "node tests/render.cjs && node tests/interactions.cjs && node tests/content-parity.cjs"
+  },
+  "dependencies": {
+    "@fontsource/cabin": "^5.3.0",
+    "@fontsource/mukta": "^5.3.0",
+    "lucide-react": "^1.71.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "axe-core": "^4.14.0",
+    "playwright-core": "^1.48.2",
+    "sharp": "^0.35.5",
+    "tailwindcss": "^4.3.5",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.7"
+  }
+}
